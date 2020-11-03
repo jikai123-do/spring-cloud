@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+ 
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+  <!-- mysql数据库
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql:///shop"
+        userId="root"
+        password="123456">
+    </jdbcConnection>
+   -->  
+        <!-- Oracle数据库 -->
+	    <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+	        connectionURL="jdbc:oracle:thin:@//101.102.37.141:1521/gjjcore"
+	        userId="gd"
+	        password="gd">
+	    </jdbcConnection> 
+    
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+      	<!-- targetProject：生成POJO类的位置 -->
+    <javaModelGenerator targetPackage="pojo" targetProject=".\src">
+      <property name="enableSubPackages" value="false" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    
+     	<!-- targetProject：mapper映射文件生成的位置 -->
+    <sqlMapGenerator targetPackage="mapper"  targetProject=".\src">
+      <property name="enableSubPackages" value="false" />
+    </sqlMapGenerator>
+   
+   	<!-- targetProject：mapper接口生成的的位置 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="mapper"  targetProject=".\src">
+      <property name="enableSubPackages" value="false" />
+    </javaClientGenerator>
+    
+    	<!-- 指定数据表 -->
+    <table  tableName="VIEW_GDDH_DEBT"  > </table>
+
+  </context>
+</generatorConfiguration>
