@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 @Api(value = "ViewGddhDebtController", description = "ViewGddhDebtController" ,produces = MediaType.APPLICATION_JSON_VALUE)
 public class ViewGddhDebtController {
     @Resource
-    private ViewGddhDebtService  viewGddhDebtService;
+    private ViewGddhDebtService viewGddhDebtService;
 
 
     @GetMapping("/searchByInfo")
