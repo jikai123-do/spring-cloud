@@ -25,11 +25,14 @@ public class ViewGddhDebtController {
     private ViewGddhDebtService  viewGddhDebtService;
 
 
-    @PostMapping("/searchByInfo")
-    @ApiOperation(value="登录" ,httpMethod = "POST",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping("/searchByInfo")
+    @ApiOperation(value="登录" ,httpMethod = "get",produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiImplicitParam(name="ViewGddhDebt",value="登录信息",dataType = "ViewGddhDebt")
-    public ModelAndView searchInfo(ViewGddhDebt viewGddhDebt){
-
+    public ModelAndView searchInfo( Long id,String priAccount){
+        ViewGddhDebt viewGddhDebt=new ViewGddhDebt();
+        viewGddhDebt.setId(id);
+        viewGddhDebt.setPriAccount(priAccount);
+       System.out.println(id+"   "+priAccount);
         ViewGddhDebt viewGddhDebtInfo = viewGddhDebtService.findByViewGddhDebtInfo(viewGddhDebt);
         ModelAndView mv=new ModelAndView("success");
         mv.addObject("ViewGddhDebt",viewGddhDebtInfo);

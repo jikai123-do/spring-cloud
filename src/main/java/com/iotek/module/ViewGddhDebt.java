@@ -14,7 +14,7 @@ public class ViewGddhDebt  {
      *
      * @mbggenerated Thu Oct 15 23:07:48 CST 2020
      */
-  //  @JsonSerialize(using= ToStringSerializer.class)
+    @JsonSerialize(using= ToStringSerializer.class)
     private Long id;
 
     /**
