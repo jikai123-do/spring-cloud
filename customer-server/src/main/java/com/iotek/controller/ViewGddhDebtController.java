@@ -24,7 +24,7 @@ public class ViewGddhDebtController {
     private ViewGddhDebtService  viewGddhDebtService;
 
 
-    @GetMapping("/searchByInfo")
+    @RequestMapping("/searchByInfo")
     @ApiOperation(value="登录" ,httpMethod = "get",produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiImplicitParam(name="ViewGddhDebt",value="登录信息",dataType = "ViewGddhDebt")
     public ModelAndView searchInfo( Long id,String priAccount){
@@ -39,7 +39,7 @@ public class ViewGddhDebtController {
          return mv;
     }
 
-    @GetMapping("/{id}")
+    @RequestMapping("/{id}")
     @ApiOperation(value="通过id查询贷款信息" ,httpMethod = "GET",produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiImplicitParam(name="id",value="信息id",dataType = "Long",required = true,paramType = "Path")
     public ModelAndView searchById(@PathVariable Long id){
@@ -57,6 +57,17 @@ public class ViewGddhDebtController {
         return  new ModelAndView("login");
 
     }
+    //通过id得到相应信息
+    @RequestMapping("/customerInfo/customerId")
+   public String getCustomerInfo(@PathVariable  String customerInfo,
+                                 @PathVariable Long  customerId){
 
+        if(customerInfo.equals("customerCardId")){
+
+            return  viewGddhDebtService.findByPrimaryKey(customerId).getIdCardNum();
+        }
+
+            return null;
+    }
 
 }
