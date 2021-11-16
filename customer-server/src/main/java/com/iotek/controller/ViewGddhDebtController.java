@@ -51,6 +51,7 @@ public class ViewGddhDebtController {
         return mv;
 
     }
+    //http://localhost:8888/v1/viewGddhDebt/login
     @RequestMapping("/login")
     public ModelAndView index(){
 

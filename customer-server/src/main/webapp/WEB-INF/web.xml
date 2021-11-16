@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <!-- classpath:applicationContext.xml
+        , classpath:application-bean-service.xml
+        , classpath:application-web-service.xml
+        , classpath:application-web-service-extensions.xml -->
+        <param-value>
+<!--            classpath:application-root-ecomm.xml-->
+<!--            , classpath:application-core-ecomm.xml-->
+<!--            , classpath:application-web-ecomm.xml-->
+<!--            , classpath:application-component-security.xml-->
+<!--            , classpath:application-component-treemenu.xml-->
+<!--            , classpath:application-commons-project-service.xml-->
+<!--            , classpath:application-component-security-extensions.xml-->
+<!--            , classpath:application-accumulation-project-service.xml-->
+<!--            , classpath:application-quartz.xml-->
+<!--            , classpath:application-component-kafka-producer.xml-->
+<!--            &lt;!&ndash;, classpath:application-commons-project-redis-cluster.xml&ndash;&gt;-->
+<!--            , classpath:spring-mybatis.xml-->
+<!--            &lt;!&ndash;, classpath:application-accounting-project-service.xml&ndash;&gt;-->
+<!--            &lt;!&ndash;, classpath:application-component-kafka-consumer.xml&ndash;&gt;-->
+<!--            , classpath:application-webservice-cxf-server-service.xml-->
+<!--            , classpath:application-webservice-cxf-server.xml-->
+<!--            , classpath:application-webservice-cxf-client.xml-->
+<!--            , classpath:application-commons-project-quartz.xml-->
+<!--            ,classpath:spring-tasks.xml-->
+            <!-- , classpath:application-accumulation-wanda-sso.xml -->
+        </param-value>
+    </context-param>
+
+    <!--报表服务url-->
+    <context-param>
+        <param-name>reportURL</param-name>
+        <!--<param-value>http://101.102.32.81:7003/rqsoft/reportJsp/showReport.jsp</param-value>-->
+        <!--仿真-->
+<!--        <param-value>http://101.102.37.71:7001/rqsoft/reportJsp/showReport.jsp</param-value>-->
+
+        <!--联调-->
+        <param-value>http://101.102.37.134:7003/rqsoft/reportJsp/showReport.jsp</param-value>
+
+        <!--本地-->
+<!--        <param-value>http://172.20.58.154:8081/demo/reportJsp/showReport.jsp</param-value>-->
+    </context-param>
+
+    <!--影像上传服务url -->
+    <context-param>
+        <param-name>photographUploadURL</param-name>
+        <!--生产-->
+        <!--<param-value>https://yxzl.gjj.sh.cegn.cn:50203/gjjimage/yxPortableScannerCompany.action</param-value>-->
+        <!--仿真-->
+        <param-value>http://101.102.37.51:7003/gjjimage/yxPortableScannerCompany.action</param-value>
+        <!--灾备-->
+        <!--<param-value>http://101.102.37.151:7003/gjjimage/yxPortableScannerCompany.action</param-value>-->
+        <!--登台-->
+        <!--<param-value>http://dt05.gjj.sh.cegn.cn:7003/gjjimage/yxPortableScannerCompany.action</param-value>-->
+
+    </context-param>
+    <context-param>
+        <param-name>photographUploadGdURL</param-name>
+        <param-value>http://101.102.37.51:7003/gjjimage/viewUploadPageForGD.action</param-value>
+    </context-param>
+
+    <!--影像查看服务url -->
+    <context-param>
+        <param-name>photographViewURL</param-name>
+        <!--生产-->
+        <!--<param-value>https://yxzl.gjj.sh.cegn.cn:50203/gjjimage/common/yxView.jsp</param-value>-->
+        <!--仿真-->
+        <param-value>http://101.102.37.51:7003/gjjimage/common/yxView.jsp</param-value>
+        <!--灾备-->
+        <!--<param-value>http://101.102.37.151:7003/gjjimage/common/yxView.jsp</param-value>-->
+        <!--登台-->
+        <!--<param-value>http://dt05.gjj.sh.cegn.cn:7003/gjjimage/common/yxView.jsp</param-value>-->
+
+    </context-param>
+
+    <!--核算报表目录-->
+<!--    <context-param>-->
+<!--        <param-name>hsml</param-name>-->
+<!--        <param-value>/app/webapps/gj_js_hs_file/HS_MB</param-value>-->
+<!--    </context-param>-->
+<!--    <context-param>-->
+<!--        <param-name>zbml</param-name>-->
+<!--        <param-value>/app/webapps/gj_js_hs_file/CaiWu</param-value>-->
+<!--    </context-param>-->
+    <!--表文件存放的自定义目录的上层目录-->
+    <!--<context-param>-->
+        <!--<param-name>reportFilePath</param-name>-->
+        <!--<param-value></param-value>-->
+    <!--</context-param>-->
+    <!--仿真环境-->
+    <!--<context-param>-->
+    <!--<param-name>reportURL</param-name>-->
+    <!--<param-value>http://101.102.37.71:7003/rqsoft/reportJsp/showReport.jsp</param-value>-->
+    <!--</context-param>-->
+    <!--表文件存放的自定义目录的上层目录-->
+    <!--仿真环境目录-->
+<!--    <context-param>-->
+<!--    <param-name>reportFilePath</param-name>-->
+<!--    <param-value>/app/webapps/gj_js_hs_file</param-value>-->
+<!--&lt;!&ndash;        <param-value>/</param-value>&ndash;&gt;-->
+<!--    </context-param>-->
+    <!--正式环境-->
+    <!--<context-param>-->
+    <!--<param-name>reportURL</param-name>-->
+    <!--<param-value>http://101.102.32.81:7003/rqsoft/reportJsp/showReport.jsp</param-value>-->
+    <!--</context-param>-->
+    <!--&lt;!&ndash;表文件存放的自定义目录的上层目录&ndash;&gt;-->
+    <!--&lt;!&ndash;正式环境目录&ndash;&gt;-->
+    <!--<context-param>-->
+    <!--<param-name>reportFilePath</param-name>-->
+    <!--<param-value>gj_js_hs_file/</param-value>-->
+    <!--</context-param>-->
+
+<!--    <filter>-->
+<!--        <filter-name>SetCharacterEncoding</filter-name>-->
+<!--        <filter-class>-->
+<!--            com.capinfo.framework.web.filter.SetCharacterEncodingFilter-->
+<!--        </filter-class>-->
+<!--        <init-param>-->
+<!--            <param-name>encoding</param-name>-->
+<!--            <param-value>UTF-8</param-value>-->
+<!--        </init-param>-->
+<!--        <init-param>-->
+<!--            <param-name>ignore</param-name>-->
+<!--            <param-value>true</param-value>-->
+<!--        </init-param>-->
+<!--    </filter>-->
+
+
+    <!-- <filter>
+        <filter-name>Set DataScopeID from Cookie</filter-name>
+        <filter-class>
+            com.capinfo.accumulation.web.filter.DataScopePopulateFilter
+        </filter-class>
+        <init-param>
+            <param-name>cookieName4Site</param-name>
+            <param-value>cookie_name_site_id</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cookieName4Region</param-name>
+            <param-value>cookie_name_region_id</param-value>
+        </init-param>
+    </filter> -->
+<!--    <filter>-->
+<!--        <filter-name>OpenSessionInView</filter-name>-->
+<!--        <filter-class>-->
+<!--            org.springframework.orm.hibernate5.support.OpenSessionInViewFilter-->
+<!--        </filter-class>-->
+<!--        <init-param>-->
+<!--            <param-name>sessionFactoryBeanName</param-name>-->
+<!--            <param-value>sessionFactory4Ecomm</param-value>-->
+<!--        </init-param>-->
+<!--        &lt;!&ndash; init-param>-->
+<!--            <param-name>flushMode</param-name>-->
+<!--            <param-value>MANUAL</param-value>-->
+<!--        </init-param &ndash;&gt;-->
+<!--    </filter>-->
+<!--    <filter>-->
+<!--        <filter-name>springSecurityFilterChain</filter-name>-->
+<!--        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+<!--    </filter>-->
+<!--    <filter>-->
+<!--        <filter-name>userFilter</filter-name>-->
+<!--        <filter-class>-->
+<!--            org.springframework.web.filter.DelegatingFilterProxy-->
+<!--        </filter-class>-->
+<!--        <init-param>-->
+<!--            <param-name>targetFilterLifecycle</param-name>-->
+<!--            <param-value>true</param-value>-->
+<!--        </init-param>-->
+<!--    </filter>-->
+<!--    <filter>-->
+<!--        <filter-name>dataScopePopulateFilter4WebService</filter-name>-->
+<!--        <filter-class>-->
+<!--            org.springframework.web.filter.DelegatingFilterProxy-->
+<!--        </filter-class>-->
+<!--    </filter>-->
+<!--    &lt;!&ndash;清退打印日志&ndash;&gt;-->
+<!--    <filter>-->
+<!--        <filter-name>logRecorderFilter</filter-name>-->
+<!--        <filter-class>-->
+<!--            org.springframework.web.filter.DelegatingFilterProxy-->
+<!--        </filter-class>-->
+<!--    </filter>-->
+<!--    <filter>-->
+<!--        <filter-name>WebserviceLogRecorderFilter</filter-name>-->
+<!--        <filter-class>-->
+<!--            com.capinfo.accumulation.web.filter.LogRecorderFilter-->
+<!--        </filter-class>-->
+<!--        <init-param>-->
+<!--            <param-name>hasInputStreamfilter</param-name>-->
+<!--            <param-value>true</param-value>-->
+<!--        </init-param>-->
+<!--    </filter>-->
+
+<!--    <filter-mapping>-->
+<!--        <filter-name>SetCharacterEncoding</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>logRecorderFilter</filter-name>-->
+<!--        <url-pattern>*.shtml</url-pattern>-->
+<!--    </filter-mapping>-->
+
+<!--    <filter-mapping>-->
+<!--        <filter-name>WebserviceLogRecorderFilter</filter-name>-->
+<!--        <url-pattern>/services/*</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>WebserviceLogRecorderFilter</filter-name>-->
+<!--        <url-pattern>/yyzc/all_the_logout.shtml</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    &lt;!&ndash;end&ndash;&gt;-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>OpenSessionInView</filter-name>-->
+<!--        <url-pattern>/dwr/*</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>OpenSessionInView</filter-name>-->
+<!--        <url-pattern>*.shtml</url-pattern>-->
+<!--    </filter-mapping>-->
+
+<!--    &lt;!&ndash; <filter-mapping>-->
+<!--        <filter-name>Set DataScopeID from Cookie</filter-name>-->
+<!--        <url-pattern>*.shtml</url-pattern>-->
+<!--    </filter-mapping> &ndash;&gt;-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>springSecurityFilterChain</filter-name>-->
+<!--        <url-pattern>/j_spring_security_check</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>springSecurityFilterChain</filter-name>-->
+<!--        <url-pattern>/j_spring_security_logout</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>springSecurityFilterChain</filter-name>-->
+<!--        <url-pattern>*.dwr</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>springSecurityFilterChain</filter-name>-->
+<!--        <url-pattern>*.shtml</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>userFilter</filter-name>-->
+<!--        <url-pattern>*.shtml</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>dataScopePopulateFilter4WebService</filter-name>-->
+<!--        <url-pattern>/services/*</url-pattern>-->
+<!--    </filter-mapping>-->
+
+<!--    <listener>-->
+<!--        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+<!--    </listener>-->
+<!--    <listener>-->
+<!--        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>-->
+<!--    </listener>-->
+<!--    <listener>-->
+<!--        <listener-class>com.capinfo.commons.project.web.listener.OnlineUserListener</listener-class>-->
+<!--    </listener>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>controller</servlet-name>-->
+<!--        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
+<!--        <init-param>-->
+<!--            <param-name>namespace</param-name>-->
+<!--            <param-value>application-web-servlet</param-value>-->
+<!--        </init-param>-->
+<!--        <init-param>-->
+<!--            <param-name>publishEvents</param-name>-->
+<!--            <param-value>false</param-value>-->
+<!--        </init-param>-->
+<!--        <load-on-startup>1</load-on-startup>-->
+<!--    </servlet>-->
+
+<!--    <servlet>-->
+<!--        <display-name>DWR Sevlet</display-name>-->
+<!--        <servlet-name>dwr-invoker</servlet-name>-->
+<!--        <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>-->
+<!--        <init-param>-->
+<!--            <description>是否打开调试功能</description>-->
+<!--            <param-name>false</param-name>-->
+<!--            <param-value>true</param-value>-->
+<!--        </init-param>-->
+<!--        <init-param>-->
+<!--            <description>日志级别有效值为： FATAL, ERROR, WARN (the default), INFO and DEBUG.</description>-->
+<!--            <param-name>logLevel</param-name>-->
+<!--            <param-value>DEBUG</param-value>-->
+<!--        </init-param>-->
+<!--        <init-param>-->
+<!--            <description>是否激活反向Ajax</description>-->
+<!--            <param-name>activeReverseAjaxEnabled</param-name>-->
+<!--            <param-value>true</param-value>-->
+<!--        </init-param>-->
+<!--        <init-param>-->
+<!--            <description>在WEB启动时是否创建范围为application的creator</description>-->
+<!--            <param-name>initApplicationScopeCreatorsAtStartup</param-name>-->
+<!--            <param-value>true</param-value>-->
+<!--        </init-param>-->
+<!--        <init-param>-->
+<!--            <description>在WEB启动时是否创建范围为application的creator</description>-->
+<!--            <param-name>preferDataUrlSchema</param-name>-->
+<!--            <param-value>false</param-value>-->
+<!--        </init-param>-->
+<!--        <load-on-startup>1</load-on-startup>-->
+<!--    </servlet>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>CXFServlet</servlet-name>-->
+<!--        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>-->
+<!--        <load-on-startup>1</load-on-startup>-->
+<!--    </servlet>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>picCheckCode</servlet-name>-->
+<!--        <servlet-class>com.capinfo.framework.web.servlet.PicCheckCode2</servlet-class>-->
+<!--        <init-param>-->
+<!--            <param-name>validateCodeParameter</param-name>-->
+<!--            <param-value>j_validate_code</param-value>-->
+<!--        </init-param>-->
+<!--    </servlet>-->
+
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>controller</servlet-name>-->
+<!--        <url-pattern>*.*</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>dwr-invoker</servlet-name>-->
+<!--        <url-pattern>/dwr/*</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>CXFServlet</servlet-name>-->
+<!--        <url-pattern>/services/*</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>picCheckCode</servlet-name>-->
+<!--        <url-pattern>/picCheckCode</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+
+    <session-config>
+        <session-timeout>1440</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+<!--    <jsp-config>-->
+<!--        <taglib>-->
+<!--            <taglib-uri>/WEB-INF/c.tld</taglib-uri>-->
+<!--            <taglib-location>/WEB-INF/c.tld</taglib-location>-->
+<!--        </taglib>-->
+<!--    </jsp-config>-->
+
+<!--    <error-page>-->
+<!--        <error-code>207</error-code>-->
+<!--        <location>/warning/207.jsp</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/warning/404.jsp</location>-->
+<!--    </error-page>-->
+
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/warning/500.jsp</location>-->
+<!--    </error-page>-->
+</web-app>
