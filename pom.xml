@@ -10,6 +10,7 @@
   <modules>
    <module>customer-server</module>
    <module>eureka-server</module>
+   <module>config-server</module>
    <module>order-server</module>
 
   </modules>
